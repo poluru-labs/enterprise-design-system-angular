@@ -1,0 +1,27 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Foundations/Themes" />
+
+# Themes
+
+**Enterprise Design Systems** ships a **light** default and a **dark** theme.
+
+## Storybook
+
+Use the toolbar **Theme** switcher to toggle `light` / `dark`.  
+Dark mode applies the `eds-theme-dark` class on `html` / `body` / story root.
+
+## In your app
+
+```ts
+import { EdsThemeService } from '@poluru-labs/enterprise-design-system-angular';
+
+theme.setTheme('dark');
+theme.toggleTheme();
+```
+
+Or:
+
+```html
+<html class="eds-theme-dark"></html>
+```

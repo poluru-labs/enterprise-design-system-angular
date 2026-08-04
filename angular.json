@@ -1,0 +1,62 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "projects": {
+    "enterprise-design-system-angular": {
+      "projectType": "library",
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "eds",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "ng-package.json",
+            "tsConfig": "tsconfig.lib.json"
+          }
+        },
+        "storybook": {
+          "builder": "@storybook/angular:start-storybook",
+          "options": {
+            "configDir": ".storybook",
+            "browserTarget": "enterprise-design-system-angular:build-storybook-app",
+            "port": 6008,
+            "compodoc": false,
+            "styles": [
+              "src/lib/tokens/index.css",
+              "src/lib/styles/global.css"
+            ]
+          }
+        },
+        "build-storybook": {
+          "builder": "@storybook/angular:build-storybook",
+          "options": {
+            "configDir": ".storybook",
+            "browserTarget": "enterprise-design-system-angular:build-storybook-app",
+            "compodoc": false,
+            "outputDir": "storybook-static",
+            "styles": [
+              "src/lib/tokens/index.css",
+              "src/lib/styles/global.css"
+            ]
+          }
+        },
+        "build-storybook-app": {
+          "builder": "@angular-devkit/build-angular:browser-esbuild",
+          "options": {
+            "outputPath": "dist/storybook-app",
+            "index": "src/stories/index.html",
+            "main": "src/stories/main.ts",
+            "polyfills": ["zone.js"],
+            "tsConfig": "tsconfig.storybook.json",
+            "styles": [
+              "src/lib/tokens/index.css",
+              "src/lib/styles/global.css"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+:root {
+  --eds-shadow-xs: 0 1px 2px rgb(15 23 32 / 0.05);
+  --eds-shadow-sm: 0 1px 3px rgb(15 23 32 / 0.08), 0 1px 2px rgb(15 23 32 / 0.04);
+  --eds-shadow-md: 0 4px 12px rgb(15 23 32 / 0.08), 0 2px 4px rgb(15 23 32 / 0.04);
+  --eds-shadow-lg: 0 12px 32px rgb(15 23 32 / 0.12), 0 4px 8px rgb(15 23 32 / 0.06);
+  --eds-shadow-focus: 0 0 0 3px rgb(18 131 126 / 0.35);
+}

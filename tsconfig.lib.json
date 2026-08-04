@@ -1,0 +1,22 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./out-tsc/lib",
+    "declaration": true,
+    "declarationMap": true,
+    "inlineSources": true,
+    "types": [],
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true
+  },
+  "exclude": [
+    "src/**/*.spec.ts",
+    "src/**/*.stories.ts",
+    "src/docs/**",
+    ".storybook/**",
+    "dist",
+    "node_modules"
+  ],
+  "include": ["src/**/*.ts"]
+}

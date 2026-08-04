@@ -1,0 +1,51 @@
+:root {
+  /* Color — neutrals */
+  --eds-color-ink-950: #0f1720;
+  --eds-color-ink-900: #1a2430;
+  --eds-color-ink-800: #2a3746;
+  --eds-color-ink-700: #3d4d5f;
+  --eds-color-ink-600: #5b6b7c;
+  --eds-color-ink-500: #7a8b9c;
+  --eds-color-ink-400: #9aa8b6;
+  --eds-color-ink-300: #b8c3ce;
+  --eds-color-ink-200: #d7dee7;
+  --eds-color-ink-100: #e8edf2;
+  --eds-color-ink-50: #f4f6f8;
+  --eds-color-white: #ffffff;
+
+  /* Color — brand (teal, enterprise calm) */
+  --eds-color-brand-900: #084845;
+  --eds-color-brand-800: #0b5a56;
+  --eds-color-brand-700: #0f6e6a;
+  --eds-color-brand-600: #12837e;
+  --eds-color-brand-500: #1a9b95;
+  --eds-color-brand-400: #3db5af;
+  --eds-color-brand-300: #6dcdc8;
+  --eds-color-brand-200: #a6e2df;
+  --eds-color-brand-100: #d4f1ef;
+  --eds-color-brand-50: #eef9f8;
+
+  /* Color — semantic */
+  --eds-color-success-600: #1f7a4d;
+  --eds-color-success-100: #d9f2e5;
+  --eds-color-warning-600: #9a6700;
+  --eds-color-warning-100: #fff1cc;
+  --eds-color-danger-600: #b42318;
+  --eds-color-danger-100: #fce8e6;
+  --eds-color-info-600: #175cd3;
+  --eds-color-info-100: #e0ecff;
+
+  /* Semantic aliases */
+  --eds-color-bg: var(--eds-color-ink-50);
+  --eds-color-surface: var(--eds-color-white);
+  --eds-color-border: var(--eds-color-ink-200);
+  --eds-color-border-strong: var(--eds-color-ink-300);
+  --eds-color-text: var(--eds-color-ink-900);
+  --eds-color-text-muted: var(--eds-color-ink-600);
+  --eds-color-text-subtle: var(--eds-color-ink-500);
+  --eds-color-text-inverse: var(--eds-color-white);
+  --eds-color-focus: var(--eds-color-brand-600);
+  --eds-color-primary: var(--eds-color-brand-700);
+  --eds-color-primary-hover: var(--eds-color-brand-800);
+  --eds-color-primary-active: var(--eds-color-brand-900);
+}

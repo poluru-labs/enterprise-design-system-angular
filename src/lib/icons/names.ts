@@ -1,0 +1,47 @@
+export const EDS_ICON_NAMES = [
+  'check',
+  'check-circle',
+  'x',
+  'x-circle',
+  'plus',
+  'minus',
+  'search',
+  'chevron-down',
+  'chevron-up',
+  'chevron-left',
+  'chevron-right',
+  'calendar',
+  'clock',
+  'info',
+  'warning',
+  'alert-triangle',
+  'user',
+  'settings',
+  'edit',
+  'trash',
+  'download',
+  'upload',
+  'copy',
+  'mail',
+  'lock',
+  'eye',
+  'eye-off',
+  'menu',
+  'more-horizontal',
+  'external-link',
+  'filter',
+  'home',
+  'folder',
+  'file',
+  'star',
+  'bell',
+  'link',
+  'refresh',
+  'save',
+] as const;
+
+export type EdsIconName = (typeof EDS_ICON_NAMES)[number];
+
+export function isEdsIconName(value: string): value is EdsIconName {
+  return (EDS_ICON_NAMES as readonly string[]).includes(value);
+}

@@ -1,0 +1,14 @@
+:root {
+  --eds-space-0: 0;
+  --eds-space-1: 0.25rem; /* 4px */
+  --eds-space-2: 0.5rem; /* 8px */
+  --eds-space-3: 0.75rem; /* 12px */
+  --eds-space-4: 1rem; /* 16px */
+  --eds-space-5: 1.25rem; /* 20px */
+  --eds-space-6: 1.5rem; /* 24px */
+  --eds-space-8: 2rem; /* 32px */
+  --eds-space-10: 2.5rem; /* 40px */
+  --eds-space-12: 3rem; /* 48px */
+  --eds-space-16: 4rem; /* 64px */
+  --eds-space-20: 5rem; /* 80px */
+}

@@ -1,0 +1,7 @@
+:root {
+  --eds-duration-fast: 120ms;
+  --eds-duration-normal: 200ms;
+  --eds-duration-slow: 320ms;
+  --eds-easing-standard: cubic-bezier(0.2, 0, 0, 1);
+  --eds-easing-emphasized: cubic-bezier(0.2, 0, 0, 1);
+}

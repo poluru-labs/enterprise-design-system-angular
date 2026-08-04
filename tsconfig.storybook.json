@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./out-tsc/storybook",
+    "types": ["node"]
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.stories.ts",
+    ".storybook/**/*.ts"
+  ],
+  "exclude": ["src/**/*.spec.ts", "dist", "node_modules"]
+}

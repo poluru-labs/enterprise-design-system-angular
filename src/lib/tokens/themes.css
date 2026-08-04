@@ -1,0 +1,48 @@
+/* Dark theme — apply via class `eds-theme-dark` on <html>, <body>, or a parent. */
+.eds-theme-dark {
+  color-scheme: dark;
+
+  --eds-color-bg: #0c1219;
+  --eds-color-surface: #151d27;
+  --eds-color-border: #2a3746;
+  --eds-color-border-strong: #3d4d5f;
+  --eds-color-text: #e8edf2;
+  --eds-color-text-muted: #9aa8b6;
+  --eds-color-text-subtle: #7a8b9c;
+  --eds-color-text-inverse: #0f1720;
+  --eds-color-focus: var(--eds-color-brand-400);
+  --eds-color-primary: var(--eds-color-brand-400);
+  --eds-color-primary-hover: var(--eds-color-brand-300);
+  --eds-color-primary-active: var(--eds-color-brand-500);
+
+  --eds-color-success-100: rgb(31 122 77 / 0.2);
+  --eds-color-warning-100: rgb(154 103 0 / 0.22);
+  --eds-color-danger-100: rgb(180 35 24 / 0.22);
+  --eds-color-info-100: rgb(23 92 211 / 0.22);
+
+  --eds-shadow-xs: 0 1px 2px rgb(0 0 0 / 0.35);
+  --eds-shadow-sm: 0 1px 3px rgb(0 0 0 / 0.4), 0 1px 2px rgb(0 0 0 / 0.3);
+  --eds-shadow-md: 0 4px 12px rgb(0 0 0 / 0.45), 0 2px 4px rgb(0 0 0 / 0.3);
+  --eds-shadow-lg: 0 12px 32px rgb(0 0 0 / 0.5), 0 4px 8px rgb(0 0 0 / 0.35);
+  --eds-shadow-focus: 0 0 0 3px rgb(61 181 175 / 0.4);
+}
+
+html.eds-theme-dark,
+html.eds-theme-dark body,
+body.eds-theme-dark,
+html.eds-theme-dark #storybook-root,
+html.eds-theme-dark #storybook-docs,
+#storybook-root.eds-theme-dark,
+#storybook-docs.eds-theme-dark,
+.eds-theme-dark {
+  background:
+    radial-gradient(1200px 600px at 10% -10%, rgb(26 155 149 / 0.12), transparent 55%),
+    radial-gradient(900px 500px at 100% 0%, rgb(23 92 211 / 0.08), transparent 50%),
+    var(--eds-color-bg);
+  color: var(--eds-color-text);
+}
+
+html.eds-theme-dark,
+html.eds-theme-dark body {
+  min-height: 100%;
+}

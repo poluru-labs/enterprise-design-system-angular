@@ -1,0 +1,34 @@
+:root {
+  /* Font families */
+  --eds-font-sans: 'Source Sans 3', 'Segoe UI', 'Helvetica Neue', sans-serif;
+  --eds-font-display: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+  --eds-font-mono: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+  /* Font sizes */
+  --eds-font-size-xs: 0.75rem; /* 12px */
+  --eds-font-size-sm: 0.875rem; /* 14px */
+  --eds-font-size-md: 1rem; /* 16px */
+  --eds-font-size-lg: 1.125rem; /* 18px */
+  --eds-font-size-xl: 1.25rem; /* 20px */
+  --eds-font-size-2xl: 1.5rem; /* 24px */
+  --eds-font-size-3xl: 1.875rem; /* 30px */
+  --eds-font-size-4xl: 2.25rem; /* 36px */
+  --eds-font-size-5xl: 3rem; /* 48px */
+
+  /* Line heights */
+  --eds-line-height-tight: 1.2;
+  --eds-line-height-snug: 1.35;
+  --eds-line-height-normal: 1.5;
+  --eds-line-height-relaxed: 1.65;
+
+  /* Font weights */
+  --eds-font-weight-regular: 400;
+  --eds-font-weight-medium: 500;
+  --eds-font-weight-semibold: 600;
+  --eds-font-weight-bold: 700;
+
+  /* Letter spacing */
+  --eds-letter-spacing-tight: -0.02em;
+  --eds-letter-spacing-normal: 0;
+  --eds-letter-spacing-wide: 0.04em;
+}
