@@ -1,8 +1,0 @@
-node_modules
-dist
-coverage
-storybook-static
-.angular
-*.log
-.DS_Store
-out-tsc

@@ -1,88 +1,151 @@
-# Enterprise Design Systems (Angular)
+# Enterprise Design Systems for Angular
 
-Token-driven enterprise UI library built with **Angular**, **TypeScript**, **Jest**, and **Storybook**.
+Enterprise Design Systems for Angular is a token-driven component library for building modern, accessible, and visually consistent enterprise web applications with Angular. It combines reusable UI primitives, shared design tokens, theming support, and Storybook-powered documentation in one package.
 
-Feature parity with [`@poluru-labs/enterprise-design-system-wc`](../enterprise-design-system-wc), adapted for Angular standalone components.
+This library is designed to align with the web-component version of the design system while providing a native Angular experience with standalone components and TypeScript-first APIs.
 
-See [RELEASE_NOTES.md](./RELEASE_NOTES.md) for version history.
+## Why this library?
+
+- Build consistent enterprise UIs faster with reusable components
+- Keep styling and behavior aligned through shared design tokens
+- Support light and dark themes without duplicating component logic
+- Deliver accessible components with Storybook-driven examples and testing
+- Use a package structure that fits Angular library and application workflows
 
 ## Features
 
-- Angular 19+ standalone components (`eds-*` selectors)
-- Shared design tokens (color, typography, spacing, radius, elevation, motion)
-- **Light / dark themes** via `eds-theme-dark` + `EdsThemeService`
-- Storybook 8 with Controls, Docs, a11y, themes, interactions
-- Jest unit tests (`*.component.spec.ts`)
-- TypeScript-first public API
+- Angular 19+ standalone components with `eds-*` style integration
+- Shared design tokens for color, typography, spacing, radius, elevation, and motion
+- Theme support with light/dark modes via `EdsThemeService`
+- Storybook 8 documentation with controls, docs, accessibility, themes, and interactions
+- Jest-based unit testing for component behavior
+- Clean public API exported from the library entry point
 
-## Quick start
+## Installation
+
+For consumers of the published package:
+
+```bash
+npm install @poluru-labs/enterprise-design-system-angular
+```
+
+For local development in this repository:
 
 ```bash
 cd enterprise-design-system-angular
 npm install
+```
+
+## Quick start
+
+Start Storybook locally to explore components and examples:
+
+```bash
 npm run storybook
 ```
 
-Storybook: [http://localhost:6008](http://localhost:6008)
+Open the local Storybook instance at:
+
+- http://localhost:6008
+
+Example usage in an Angular application:
 
 ```ts
+import { Component } from '@angular/core';
 import {
   EdsButtonComponent,
   EdsThemeService,
   ToastService,
 } from '@poluru-labs/enterprise-design-system-angular';
 
-// In app styles / angular.json styles:
-// node_modules/@poluru-labs/enterprise-design-system-angular/.../tokens/index.css
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [EdsButtonComponent],
+  template: `
+    <eds-button (click)="notify()">Save</eds-button>
+  `,
+})
+export class AppComponent {
+  constructor(private theme: EdsThemeService, private toast: ToastService) {}
 
-constructor(private theme: EdsThemeService, private toast: ToastService) {}
+  toggleTheme() {
+    this.theme.toggleTheme();
+  }
 
-toggleDark() {
-  this.theme.toggleTheme();
-}
-
-notify() {
-  this.toast.show({ title: 'Saved', variant: 'success' });
+  notify() {
+    this.toast.show({ title: 'Saved', variant: 'success' });
+  }
 }
 ```
+
+Make sure your application styles include the library’s token stylesheet, for example from the package distribution or your build pipeline.
 
 ```html
 <html class="eds-theme-dark">
-  <!-- or EdsThemeService.setTheme('dark') -->
+  <!-- or use EdsThemeService.setTheme('dark') -->
 </html>
 ```
 
-## Scripts
+## Theming
+
+The library includes theme-aware design tokens and a lightweight service for switching between themes:
+
+```ts
+import { EdsThemeService } from '@poluru-labs/enterprise-design-system-angular';
+
+constructor(private theme: EdsThemeService) {}
+
+switchTheme() {
+  this.theme.toggleTheme();
+}
+```
+
+## Development
+
+### Available scripts
 
 | Command | Description |
 | --- | --- |
-| `npm run storybook` | Storybook on port 6008 |
-| `npm run build` | Build library (ng-packagr) |
-| `npm test` | Jest unit tests |
-| `npm run test:coverage` | Coverage report |
-| `npm run typecheck` | TypeScript check |
+| `npm run storybook` | Start Storybook on port 6008 |
+| `npm run build` | Build the library with ng-packagr |
+| `npm test` | Run Jest unit tests |
+| `npm run test:coverage` | Generate a coverage report |
+| `npm run test:watch` | Run Jest in watch mode |
+| `npm run typecheck` | Type-check the project |
+| `npm run clean` | Remove build, coverage, and Storybook artifacts |
 
-## Folder structure
+### Project structure
 
 ```text
 enterprise-design-system-angular/
-├── .storybook/              # Storybook + brand "Enterprise Design Systems"
+├── .storybook/              # Storybook configuration and branding
 ├── src/
 │   ├── lib/
-│   │   ├── components/      # eds-* Angular components
-│   │   ├── tokens/          # CSS + TS design tokens (+ dark theme)
-│   │   ├── icons/
-│   │   ├── theme/           # EdsThemeService
-│   │   ├── utils/
-│   │   └── styles/
-│   ├── docs/
-│   └── public-api.ts
+│   │   ├── components/      # Angular components
+│   │   ├── tokens/          # CSS and token definitions
+│   │   ├── icons/           # Icon assets and metadata
+│   │   ├── theme/           # Theme service and related logic
+│   │   ├── utils/           # Shared utility helpers
+│   │   └── styles/          # Global styles
+│   ├── docs/                # Documentation content
+│   └── public-api.ts        # Library entry point
 ├── package.json
-└── ng-package.json
+├── ng-package.json
+└── RELEASE_NOTES.md
 ```
 
-## Author
+## Documentation and release notes
 
-**Author:** Subrahmanyam Poluru  
-**Package:** `@poluru-labs/enterprise-design-system-angular`  
-**Brand:** Enterprise Design Systems
+- See [RELEASE_NOTES.md](./RELEASE_NOTES.md) for version history and notable updates.
+- Use Storybook for interactive examples and component documentation.
+
+## License
+
+This project is licensed under the MIT License.
+
+## Maintainer
+
+- Author: Subrahmanyam Poluru
+- Package: `@poluru-labs/enterprise-design-system-angular`
+- Brand: Enterprise Design Systems
