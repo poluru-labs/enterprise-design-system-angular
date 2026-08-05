@@ -8,6 +8,22 @@
     "url": "https://github.com/subrahmanyampoluru"
   },
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/poluru-labs/enterprise-design-system-angular.git"
+  },
+  "homepage": "https://github.com/poluru-labs/enterprise-design-system-angular",
+  "bugs": {
+    "url": "https://github.com/poluru-labs/enterprise-design-system-angular/issues"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "sideEffects": [
     "*.css"
   ],
