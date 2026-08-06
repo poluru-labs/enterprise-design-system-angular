@@ -16,11 +16,6 @@
   "bugs": {
     "url": "https://github.com/poluru-labs/enterprise-design-system-angular/issues"
   },
-  "files": [
-    "dist",
-    "README.md",
-    "LICENSE"
-  ],
   "publishConfig": {
     "access": "public"
   },
@@ -28,19 +23,21 @@
     "*.css"
   ],
   "scripts": {
-    "build": "ng-packagr -p ng-package.json",
+    "build": "ng-packagr -p ng-package.json && node scripts/postbuild-package.mjs",
     "storybook": "ng run enterprise-design-system-angular:storybook",
     "build-storybook": "ng run enterprise-design-system-angular:build-storybook",
     "test": "jest --config jest.config.cjs --watchman=false",
     "test:watch": "jest --config jest.config.cjs --watch --watchman=false",
     "test:coverage": "jest --config jest.config.cjs --coverage --watchman=false",
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "clean": "rm -rf dist storybook-static coverage .angular out-tsc"
+    "clean": "rm -rf dist storybook-static coverage .angular out-tsc",
+    "pack:lib": "npm run build && npm pack ./dist",
+    "publish:lib": "npm run build && npm publish ./dist --access public"
   },
   "peerDependencies": {
     "@angular/common": "^19.0.0 || ^20.0.0 || ^21.0.0",
     "@angular/core": "^19.0.0 || ^20.0.0 || ^21.0.0",
-    "@angular/forms": "^19.0.0 || ^20.0.0 || ^21.0.0",
+    "@angular/platform-browser": "^19.0.0 || ^20.0.0 || ^21.0.0",
     "rxjs": "^7.8.0"
   },
   "dependencies": {

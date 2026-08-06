@@ -79,7 +79,17 @@ export class AppComponent {
 }
 ```
 
-Make sure your application styles include the library’s token stylesheet, for example from the package distribution or your build pipeline.
+Include the library styles in your Angular app (for example in `angular.json`):
+
+```json
+"styles": [
+  "@poluru-labs/enterprise-design-system-angular/tokens.css",
+  "@poluru-labs/enterprise-design-system-angular/styles.css",
+  "src/styles.css"
+]
+```
+
+Optional dark theme on the document root:
 
 ```html
 <html class="eds-theme-dark">
@@ -108,12 +118,14 @@ switchTheme() {
 | Command | Description |
 | --- | --- |
 | `npm run storybook` | Start Storybook on port 6008 |
-| `npm run build` | Build the library with ng-packagr |
+| `npm run build` | Build the library with ng-packagr into `dist/` |
 | `npm test` | Run Jest unit tests |
 | `npm run test:coverage` | Generate a coverage report |
 | `npm run test:watch` | Run Jest in watch mode |
 | `npm run typecheck` | Type-check the project |
 | `npm run clean` | Remove build, coverage, and Storybook artifacts |
+| `npm run pack:lib` | Build and create an npm tarball from `dist/` |
+| `npm run publish:lib` | Build and publish the package from `dist/` |
 
 ### Project structure
 
@@ -135,17 +147,30 @@ enterprise-design-system-angular/
 └── RELEASE_NOTES.md
 ```
 
+## Publishing
+
+This library must be published from the built `dist/` folder (not the repo root):
+
+```bash
+npm run pack:lib      # verify tarball contents
+npm run publish:lib   # requires npm login with @poluru-labs publish rights
+```
+
+After publishing, tag the release in git (for example `v1.0.0`) and update [RELEASE_NOTES.md](./RELEASE_NOTES.md).
+
 ## Documentation and release notes
 
 - See [RELEASE_NOTES.md](./RELEASE_NOTES.md) for version history and notable updates.
 - Use Storybook for interactive examples and component documentation.
+- See [CONTRIBUTING.md](./CONTRIBUTING.md) for local development and PR guidelines.
+- See [SECURITY.md](./SECURITY.md) for private vulnerability reporting.
 
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the MIT License. See [LICENSE](./LICENSE) and [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md).
 
 ## Maintainer
 
 - Author: Subrahmanyam Poluru
 - Package: `@poluru-labs/enterprise-design-system-angular`
-- Brand: Enterprise Design Systems
+- Brand: Enterprise Design Systems / Poluru Labs

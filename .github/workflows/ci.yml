@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Test
+        run: npm test
+
+      - name: Build
+        run: npm run build
+
+      - name: Verify pack contents
+        run: |
+          npm pack ./dist --dry-run | tee pack-dry-run.txt
+          grep -q 'fesm2022/poluru-labs-enterprise-design-system-angular.mjs' pack-dry-run.txt
+          grep -q 'src/lib/tokens/index.css' pack-dry-run.txt
+          grep -q 'src/lib/styles/global.css' pack-dry-run.txt
