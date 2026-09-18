@@ -1,0 +1,37 @@
+{
+  "name": "ai-agent-ops-console",
+  "version": "1.0.0",
+  "description": "AgentOps Kit — AI agent operations console. Sidebar, agents, runs, tools, and handoffs. Light theme, brand #08766C.",
+  "scripts": {
+    "start": "ng serve",
+    "dev": "ng serve",
+    "build": "ng build",
+    "test": "ng test --watch=false",
+    "lint": "ng lint",
+    "lint:fix": "ng lint --fix"
+  },
+  "dependencies": {
+    "@angular/common": "^21.2.21",
+    "@angular/compiler": "^21.2.21",
+    "@angular/core": "^21.2.21",
+    "@angular/platform-browser": "^21.2.21",
+    "@angular/router": "^21.2.21",
+    "@poluru-labs/enterprise-design-system-angular": "^1.0.0",
+    "bootstrap": "^5.3.8",
+    "rxjs": "~7.8.2",
+    "tslib": "^2.8.1",
+    "zone.js": "~0.15.1"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^21.2.21",
+    "@angular/cli": "^21.2.21",
+    "@angular/compiler-cli": "^21.2.21",
+    "@eslint/js": "^10.0.1",
+    "angular-eslint": "^21.4.0",
+    "eslint": "^10.9.1",
+    "jsdom": "^29.1.1",
+    "typescript": "~5.9.3",
+    "typescript-eslint": "^8.69.0",
+    "vitest": "^4.1.11"
+  }
+}
